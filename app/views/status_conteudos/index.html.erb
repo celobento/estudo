@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Status Conteudos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @status_conteudos.each do |status_conteudo| %>
+      <tr>
+        <td><%= status_conteudo.nome %></td>
+        <td><%= link_to 'Show', status_conteudo %></td>
+        <td><%= link_to 'Edit', edit_status_conteudo_path(status_conteudo) %></td>
+        <td><%= link_to 'Destroy', status_conteudo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Status conteudo', new_status_conteudo_path %>

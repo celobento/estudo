@@ -1,0 +1,29 @@
+<%= form_for(@conteudo) do |f| %>
+  <% if @conteudo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@conteudo.errors.count, "error") %> prohibited this conteudo from being saved:</h2>
+
+      <ul>
+      <% @conteudo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :disciplina_id %><br>
+    <%= f.collection_select :disciplina_id, @disciplinas, :id, :nome , {}, class:"form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :status_conteudo_id %><br>
+    <%= f.collection_select :status_conteudo_id, @status, :id, :nome , {}, class:"form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

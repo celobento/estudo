@@ -1,0 +1,1 @@
+json.array! @status_conteudos, partial: 'status_conteudos/status_conteudo', as: :status_conteudo
